@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using b64.CommandFramework;
 
-namespace b64.Actions
+namespace b64.Commands
 {
-    class DecodeAction : Action
+    class DecodeCommand : Command
     {
-        public DecodeAction(IList<string> args) : base(args)
+        public DecodeCommand(IList<string> args) : base(args)
         {
 
         }
@@ -28,11 +29,16 @@ namespace b64.Actions
             return Args.Count == 2 && Args[0] == "decode";
         }
 
+        protected virtual byte[] Decode()
+        {
+            return Convert.FromBase64String(Input);
+        }
+
         public override string Execute()
         {
             try
             {
-                byte[] data = Convert.FromBase64String(Input);
+                byte[] data = Decode();
                 return Encoding.ASCII.GetString(data);
             }
             catch (FormatException)

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace b64.Actions
+namespace b64.CommandFramework
 {
-    abstract class Action
+    abstract class Command
     {
-        public Action(IList<string> args)
+        public Command(IList<string> args)
         {
             Args = args;
         }

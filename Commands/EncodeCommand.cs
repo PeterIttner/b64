@@ -1,13 +1,14 @@
-﻿using b64.Exceptions;
+﻿using b64.CommandFramework;
+using b64.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace b64.Actions
+namespace b64.Commands
 {
-    class EncodeAction : Action
+    class EncodeCommand : Command
     {
-        public EncodeAction(IList<string> args) : base(args)
+        public EncodeCommand(IList<string> args) : base(args)
         {
 
         }
@@ -28,12 +29,17 @@ namespace b64.Actions
             return Args.Count == 2 && Args[0] == "encode";
         }
 
+        protected virtual string Encode(byte[] input)
+        {
+            return Convert.ToBase64String(input);
+        }
+
         public override string Execute()
         {
             try
             {
                 var inputBytes = Encoding.ASCII.GetBytes(Input);
-                return Convert.ToBase64String(inputBytes);
+                return Encode(inputBytes);
             }
             catch (FormatException)
             {

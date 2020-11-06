@@ -1,4 +1,4 @@
-﻿using b64.Actions;
+﻿using b64.CommandFramework;
 using b64.Exceptions;
 using System;
 using System.IO;
@@ -23,7 +23,7 @@ namespace b64
 
             try
             {
-                var action = ActionFactory.CreateAll(arguments).FirstOrDefault(a => a.Accept());
+                var action = CommandFactory.CreateAll(arguments).FirstOrDefault(a => a.Accept());
                 if (action != null)
                 {
                     Console.WriteLine(action.Execute());

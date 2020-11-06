@@ -1,14 +1,15 @@
-﻿using b64.Exceptions;
+﻿using b64.CommandFramework;
+using b64.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-namespace b64.Actions
+namespace b64.Commands
 {
-    class VersionAction : Action
+    class VersionCommand : Command
     {
-        public VersionAction(IList<string> args) : base(args)
+        public VersionCommand(IList<string> args) : base(args)
         {
 
         }

@@ -1,13 +1,14 @@
-﻿using System;
+﻿using b64.CommandFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace b64.Actions
+namespace b64.Commands
 {
-    class HelpAction : Action
+    class HelpCommand : Command
     {
-        public HelpAction(IList<string> args) : base(args)
+        public HelpCommand(IList<string> args) : base(args)
         {
 
         }
@@ -29,7 +30,7 @@ namespace b64.Actions
                 executableName += ".exe";
             }
 
-            var descriptions = ActionFactory.CreateAll(null).Select(a => a.DescriptionShort.PadRight(24) + ": " + a.DescriptionLong).ToList();
+            var descriptions = CommandFactory.CreateAll(null).Select(a => a.DescriptionShort.PadRight(41) + ": " + a.DescriptionLong).ToList();
             var text = string.Join(Environment.NewLine + "  - ", descriptions);
             return @$"{executableName} <actions>
 
