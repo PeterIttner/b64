@@ -21,7 +21,7 @@ Feel free to contribute via pull-requests or submit issues if any. Please note, 
 
 ```bash
 dotnet restore .
-dotnet build . -c Release /property:Version=1.1.0.0
+dotnet build . -c Release /property:Version=1.2.0.0
 ```
 
 ## Tests
