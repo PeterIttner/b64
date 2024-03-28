@@ -15,13 +15,13 @@ Feel free to contribute via pull-requests or submit issues if any. Please note, 
 
 ## Requirements
 
-[dotnetcore 3.1 runtime/sdk](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+[dotnetcore 8.0 runtime/sdk](https://dotnet.microsoft.com/download/dotnet-core/8.0)
 
 ## Build
 
 ```bash
 dotnet restore .
-dotnet build . -c Release /property:Version=1.0.0.0
+dotnet build . -c Release /property:Version=1.1.0.0
 ```
 
 ## Tests
