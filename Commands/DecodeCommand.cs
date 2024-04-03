@@ -1,8 +1,8 @@
-﻿using b64.Exceptions;
+﻿using b64.CommandFramework;
+using b64.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using b64.CommandFramework;
 
 namespace b64.Commands
 {

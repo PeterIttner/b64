@@ -38,14 +38,14 @@ namespace b64.Commands
 
             var descriptions = groups
                 .Select(group => FormatGroupHeadline(group.Key) +
-                    string.Join(Environment.NewLine, 
-                    
+                    string.Join(Environment.NewLine,
+
                         group
                         .OrderBy(x => x.DescriptionShort)
                         .Select(x => FormatAction(x.DescriptionShort, x.DescriptionLong))
                     )
                 ).ToList();
-            
+
             var text = string.Join(Environment.NewLine, descriptions);
 
 

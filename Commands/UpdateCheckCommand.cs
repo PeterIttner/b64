@@ -1,9 +1,6 @@
 ﻿using b64.CommandFramework;
-using b64.Exceptions;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
 namespace b64.Commands
 {
@@ -19,14 +16,14 @@ namespace b64.Commands
         public override string Group => "common";
 
 
-    
+
 
         public override bool Accept()
         {
             return Args.Count == 2 && Args[0] == "update" && Args[1] == "check";
         }
 
-   
+
 
         public override string Execute()
         {

@@ -16,7 +16,8 @@ namespace b64.CommandFramework
                 .ToList();
 
             var commandlist = new List<Command>();
-            foreach (var type in types) {
+            foreach (var type in types)
+            {
                 var instance = Activator.CreateInstance(type, args) as Command;
 
                 if (instance != null)

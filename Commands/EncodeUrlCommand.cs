@@ -1,8 +1,5 @@
-﻿using b64.Exceptions;
-using Microsoft.AspNetCore.WebUtilities;
-using System;
+﻿using Microsoft.AspNetCore.WebUtilities;
 using System.Collections.Generic;
-using System.Text;
 
 namespace b64.Commands
 {

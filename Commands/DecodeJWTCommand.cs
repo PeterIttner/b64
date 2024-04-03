@@ -1,10 +1,10 @@
-﻿using b64.Exceptions;
+﻿using b64.CommandFramework;
+using b64.Exceptions;
+using Microsoft.AspNetCore.WebUtilities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using b64.CommandFramework;
-using Microsoft.AspNetCore.WebUtilities;
-using Newtonsoft.Json;
 
 namespace b64.Commands
 {
@@ -50,7 +50,7 @@ namespace b64.Commands
             try
             {
                 var parts = Input.Split(".");
-                if(parts.Length != 3)
+                if (parts.Length != 3)
                 {
                     throw new InvalidFormatException();
                 }
