@@ -9,7 +9,7 @@ namespace b64.CommandFramework
             Args = args;
         }
 
-        protected virtual string Input { get;  }
+        protected virtual string Input { get; }
 
         protected IList<string> Args { get; private set; }
 
@@ -19,6 +19,6 @@ namespace b64.CommandFramework
 
         public abstract string DescriptionLong { get; }
         public abstract string DescriptionShort { get; }
-
+        public abstract string Group { get; }
     }
 }

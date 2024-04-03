@@ -16,8 +16,8 @@ namespace b64.Commands
 
         public override string DescriptionLong => "Displays the current version of the executable";
         public override string DescriptionShort => "-v|version";
+        public override string Group => "common";
 
-       
         public override bool Accept()
         {
             return Args.Count == 1 && (Args[0] == "-v" || Args[0] == "version");

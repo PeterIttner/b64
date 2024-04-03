@@ -15,6 +15,8 @@ namespace b64.Commands
 
         public override string DescriptionLong => "Encodes a base64 ascii text from stdin";
         public override string DescriptionShort => "encode <input>";
+        public override string Group => "encode";
+
 
         protected override string Input
         {

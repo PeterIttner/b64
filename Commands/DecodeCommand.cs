@@ -15,6 +15,7 @@ namespace b64.Commands
 
         public override string DescriptionLong => "Decodes a base64 ascii text from stdin";
         public override string DescriptionShort => "decode <input>";
+        public override string Group => "decode";
 
         protected override string Input
         {

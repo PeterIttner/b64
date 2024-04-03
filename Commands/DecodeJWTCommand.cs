@@ -17,6 +17,7 @@ namespace b64.Commands
 
         public override string DescriptionLong => "Decodes a jwt ascii text from stdin";
         public override string DescriptionShort => "decode --jwt <input>";
+        public override string Group => "decode";
 
         protected override string Input
         {
