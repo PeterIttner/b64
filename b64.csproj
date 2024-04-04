@@ -13,12 +13,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="docs/README.md" Pack="true" PackagePath="\docs"/>
-    <None Include="docs/logo_small.png" Pack="true" PackagePath="\docs"/>
+    <None Include="docs/README.md" Pack="true" PackagePath="\docs" />
+    <None Include="docs/logo_small.png" Pack="true" PackagePath="\docs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="8.0.3" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

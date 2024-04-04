@@ -1,10 +1,9 @@
 ﻿using b64.CommandFramework;
 using b64.Exceptions;
-using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace b64.Commands
 {
@@ -34,8 +33,7 @@ namespace b64.Commands
 
         private string DecodeAsJson(string input)
         {
-            var data = WebEncoders.Base64UrlDecode(input);
-            var raw = Encoding.ASCII.GetString(data);
+            var raw = Base64UrlEncoder.Encode(input);
             return FormatJson(raw);
         }
 

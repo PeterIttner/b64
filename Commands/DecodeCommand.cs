@@ -30,17 +30,17 @@ namespace b64.Commands
             return Args.Count == 2 && Args[0] == "decode";
         }
 
-        protected virtual byte[] Decode()
+        protected virtual string Decode()
         {
-            return Convert.FromBase64String(Input);
+            var bytes = Convert.FromBase64String(Input);
+            return Encoding.UTF8.GetString(bytes);
         }
 
         public override string Execute()
         {
             try
             {
-                byte[] data = Decode();
-                return Encoding.ASCII.GetString(data);
+                return Decode();
             }
             catch (FormatException)
             {

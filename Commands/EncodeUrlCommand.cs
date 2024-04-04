@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.WebUtilities;
+﻿using Microsoft.IdentityModel.Tokens;
 using System.Collections.Generic;
 
 namespace b64.Commands
@@ -26,9 +26,9 @@ namespace b64.Commands
             return Args.Count == 3 && Args[0] == "encode" && (Args[1] == "--url" || Args[1] == "-u");
         }
 
-        protected override string Encode(byte[] input)
+        protected override string Encode(string input)
         {
-            return WebEncoders.Base64UrlEncode(input);
+            return Base64UrlEncoder.Encode(input);
         }
     }
 }

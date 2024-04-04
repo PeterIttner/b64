@@ -26,7 +26,7 @@ namespace b64
                 var action = CommandFactory.CreateAll(arguments).FirstOrDefault(a => a.Accept());
                 if (action != null)
                 {
-                    Console.WriteLine(action.Execute());
+                    Console.Write(action.Execute());
                 }
                 else
                 {

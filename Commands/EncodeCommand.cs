@@ -31,17 +31,17 @@ namespace b64.Commands
             return Args.Count == 2 && Args[0] == "encode";
         }
 
-        protected virtual string Encode(byte[] input)
+        protected virtual string Encode(string input)
         {
-            return Convert.ToBase64String(input);
+            var inputBytes = Encoding.UTF8.GetBytes(input);
+            return Convert.ToBase64String(inputBytes);
         }
 
         public override string Execute()
         {
             try
             {
-                var inputBytes = Encoding.ASCII.GetBytes(Input);
-                return Encode(inputBytes);
+                return Encode(Input);
             }
             catch (FormatException)
             {
