@@ -10,14 +10,21 @@ namespace b64
     {
         static void Main(string[] args)
         {
-            var arguments = args.ToList();
+            var arguments = args
+                .Where(arg => !string.IsNullOrWhiteSpace(arg))
+                .Where(arg => !string.IsNullOrEmpty(arg))
+                .ToList();
 
             if (Console.IsInputRedirected)
             {
                 using (Stream pipestream = Console.OpenStandardInput())
                 {
                     var reader = new StreamReader(pipestream);
-                    arguments.Add(reader.ReadToEnd());
+                    var arg = reader.ReadToEnd();
+                    if(!string.IsNullOrEmpty(arg) && !string.IsNullOrWhiteSpace(arg))
+                    {
+                        arguments.Add(arg);
+                    }
                 }
             }
 
@@ -30,7 +37,7 @@ namespace b64
                 }
                 else
                 {
-                    throw new InvalidParametersException();
+                    throw new InvalidParametersException(arguments);
                 }
             }
             catch (Exception e)
