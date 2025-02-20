@@ -21,7 +21,7 @@ Easy to use base 64 conversion tool to prevent using any online websites for bas
   - stdin / pipes
   - Parameter
 - JWT Decoding
-- Completly offline - without web access
+- Completly offline - without web access (no data leaks)
 
 ## Upcoming Features
 
@@ -35,7 +35,7 @@ Feel free to contribute via pull-requests or submit issues if any. Please note, 
 
 ## Requirements
 
-[dotnetcore 8.0 runtime/sdk](https://dotnet.microsoft.com/download/dotnet-core/8.0)
+[dotnetcore 9.0 runtime/sdk](https://dotnet.microsoft.com/download/dotnet-core/9.0)
 
 ## Build
 

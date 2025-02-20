@@ -16,12 +16,12 @@ case "${unameOut}" in
 esac
 
 echo "Running current tests on $machine"
-
-exe="./bin/Debug/net8.0/b64.exe"
+dotnetversion="net9.0"
+exe="./bin/Debug/$dotnetversion/b64.exe"
 if [ "$machine" == "Linux" ] || [ "$machine" == "Mac" ]; then
-	exe="./bin/Debug/net8.0/b64"
+	exe="./bin/Debug/$dotnetversion/b64"
 else
-	exe="./bin/Debug/net8.0/b64.exe"
+	exe="./bin/Debug/$dotnetversion/b64.exe"
 fi
 
 function assert() {
